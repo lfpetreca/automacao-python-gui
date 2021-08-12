@@ -17,7 +17,7 @@ abrir_aba_com_link('https://drive.google.com/drive/folders/149xknr9JvrlEnhNWO49z
 time.sleep(5)
 gui.click(x=603, y=409, clicks=2)     #ajustar cursor pointer se necessario
 
-time.sleep(2)
+time.sleep(2)  # delay
 gui.click(x=588, y=561) #arquivo      #ajustar cursor pointer se necessario
 gui.click(x=1611, y=235) #menu        #ajustar cursor pointer se necessario
 gui.click(x=1260, y=874) #download    #ajustar cursor pointer se necessario
@@ -42,14 +42,13 @@ gui.press('tab') # assunto do email
 assunto = "Relatório de Vendas"
 clip.copy(assunto)
 gui.hotkey('ctrl', 'v')
-time.sleep(1) #delay
 
 gui.press('tab') # corpo do email
 mailBody = f''' 
 Prezados, bom dia
 
 O faturamento foi de R$ {faturamento:,.2f}
-A quantidade de produtos foi de R$ {quantidade:,}
+A quantidade de produtos foi de {quantidade:,}
 
 Atensiosamente,
 SENDER'''
